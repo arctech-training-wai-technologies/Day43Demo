@@ -149,5 +149,16 @@ namespace ConsoleApp1
                 Console.WriteLine(br.ReadInt32());
             }
         }
+
+        public void DemoStreamAndFile()
+        {
+            using (FileStream fs = new FileStream(@"E:\Textfile.txt", FileMode.Create))
+            {
+                StreamWriter streamWriter = new StreamWriter(fs);
+
+                streamWriter.WriteLine("some data to file");
+                streamWriter.Close();
+            }
+        }
     }
 }
